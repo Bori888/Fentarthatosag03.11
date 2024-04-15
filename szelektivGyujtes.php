@@ -27,9 +27,10 @@ include_once "backend.php"
         ?>
         </select>
         <br>
-        <imput type="image" img src='forras/kuka.jpg' alt='kukak' id="kuka"></imput>
+        <input type="image" img src='forras/kuka.jpg' alt='kukak'name="kuka" id="kuka"></input>
+
     </form>
     
-    
+    <a href="vizVedelme.php">viz valami</a>
 </body>
 </html>

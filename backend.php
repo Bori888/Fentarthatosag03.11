@@ -12,8 +12,8 @@
             else{
                 echo"NEm háznál gyüjtendő";
             }
+        }
         else{
             echo"Még nem érkezett adat az ürlapról";
-        }
         }
     ?>
