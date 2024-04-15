@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilyés Borbála</title>
-    <link rel="stylesheet" href="stilus.css">
-</head>
-<body>
-    <?php
-    $elsoSzint = 'Ökoszisztéma';
-    $masodikSzint = 'Társadalom';
-    $harmadikSzint = 'Gazdaság';
-    $negyedikSzint = 'Pénz';
-    echo"<div class = 'egesz'>";
+<html lang="hu-HU">
+    <head>
+        <meta charset="UTF-8">
+        <title>Főoldal</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="stilus1.css" rel="stylesheet" type="text/css"/>
 
-    echo"<div class= 'kep'>";
-    echo"<img src='kep.PNG' alt='kep'>";
-    echo"</div>";
+    </head>
+    <body>
+      <a href="szelektivGyujtes.php">Szelektí gyüjtés</a>
+	<?php
+	// Egy soros megjegyzés
+	/* Több
+	  soros
+	  megjegyzés */
 
-    echo"<div class = 'szoveg'>";
-    echo "<h1>A fentarthatóság szintjei</h1>";
-    echo "<li>$elsoSzint</li>";
-    echo "<li>$masodikSzint</li>";
-    echo "<li>$harmadikSzint</li>";
-    echo "<li>$negyedikSzint</li>";
-    echo"</div>";
-
-    echo"</div>";
-    
-    
-
-
-    ?>
-<table>
-  <tr>
-    <th>A megújuló erőforrások fogyasztása</th>
-    <th>A környezet helyzete</th>
-    <th>Fenntarthatóság</th>
-  </tr>
-  <tr>
-    <td>több, mint amit a természet újratermelni képes</td>
-    <td>a környezet pusztul</td>
-    <td>nem fenntartható</td>
-  </tr>
-  <tr>
-    <td>a természet újratermelő kapacitásával azonos mértékű</td>
-    <td>környezeti egyensúly</td>
-    <td>fenntartható, nem változó állapot</td>
-  </tr>
-  <tr>
-    <td>kevesebb, mint amit a természet újratermelni képes</td>
-    <td>a környezet megújul</td>
-    <td>fenntartható fejlődés</td>
-  </tr>
-</table>
-
-</body>
+	//szöveges változók létrehozása 1. feladat
+	$elsoSzint = "Ökoszisztéma";
+	$masodikSzint = "Társadalom";
+	$harmadikSzint = "Gazdagság";
+	$negyedikSzint = "Pénz";
+	?>
+	<div id="tartalom">
+	    <div id="bal">
+			<?php
+			print("<img src='forras/fenntart.png' alt='Fenntarthatóság szintjei'/>");
+			?>
+	    </div>
+	    <div id="jobb">
+			<h1>A fenntarthatóság szintjei</h1>
+			<ul>
+				<?php
+				//változók használata
+				echo "<li>$elsoSzint</li>";
+				echo '<li>' . $masodikSzint . '</li>';
+				echo "<li>$harmadikSzint</li>";
+				echo "<li>$negyedikSzint</li>";
+				?>
+			</ul>
+	    </div>
+	</div>
+	    <?php
+		//második feladat
+	    $eroforras=array("A megújuló erőforrások fogyasztása", "több, mint amit a természet újratermelni képes", "a természet újratermelő kapacitásával azonos mértékű", "kevesebb, mint amit a természet újratermelni képes");
+	    $kHelyzet[0]="A környezet helyzete";
+		$kHelyzet[1]= "a környezet pusztul";
+	    $kHelyzet[2]="környezeti egyensúly";
+	    $kHelyzet[3]="a környezet megújul";
+	    
+	    $fenntarthatosag=array("Fenntarthatóság");
+	    array_push($fenntarthatosag, "nem fenntartható");
+	    array_push($fenntarthatosag, "fenntartható, nem változó állapot");
+	    array_push($fenntarthatosag, "fenntartható fejlődés");
+	    
+	    echo "<p><b>$eroforras[0] - $kHelyzet[0] -	$kHelyzet[0]</b><p>";
+	    for ($index = 1; $index < count($eroforras); $index++) 
+		{
+			echo "<p>$eroforras[$index] - $kHelyzet[$index] - $fenntarthatosag[$index]<p>";
+	    }
+		echo "<table>";
+		echo "<tr>";
+		echo "<th>$eroforras[0]</th><th>$kHelyzet[0]</th><th>$fenntarthatosag[0]</th>";
+		echo "</tr>";
+		for ($index = 1; $index < count($eroforras); $index++) 
+		{
+			echo "<tr>";
+			echo "<td>$eroforras[$index]</td><td>$kHelyzet[$index]</td><td>$fenntarthatosag[$index]</td>";
+			echo "</tr>";
+	    }
+		echo "</table>";
+	    ?>
+	
+    </body>
 </html>

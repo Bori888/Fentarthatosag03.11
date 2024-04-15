@@ -1,14 +1,28 @@
-div.egesz{
+body {
+	margin: 50px;
+	font-size: 1.2em;
+}
+
+#tartalom
+{
     display: grid;
-    gap: 10 px;
     grid-template-columns: 1fr 1fr;
 }
 
-th,td{
+table, td, th{
     border: 1px solid black;
-    padding: 10px;
+    border-collapse: collapse;
+	
+}
 
+td, th{
+    text-align: center;
+	padding: 10px;
 }
-table{
-    border-collapse:collapse ;
+
+input[type="image"]
+{
+    width: 100px;
+    height: auto;
 }
+
